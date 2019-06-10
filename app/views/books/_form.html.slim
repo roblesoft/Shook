@@ -1,18 +1,27 @@
-= form_for @book do |f|
-  - if @book.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@book.errors.count, "error")} prohibited this book from being saved:"
-      ul
-        - @book.errors.full_messages.each do |message|
-          li = message
+div class="modal" tabindex="-1" role="dialog"
+	div class="modal-dialog" role="document"
+		div class="modal-content"
+			div class="modal-header"
+				h2 style="font-weight: bold" = title
+				button type="button" class="close" data-dismiss="modal" aria-label="Close"
+					  span aria-hidden="true" &times;
+			div class="modal-body"
+				= form_for @book do |f|
+				  - if @book.errors.any?
+					#error_explanation
+					  h2 = "#{pluralize(@book.errors.count, "error")} prohibited this book from being saved:"
+					  ul
+						- @book.errors.full_messages.each do |message|
+						  li = message
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :author
-    = f.text_field :author
-  .field
-    = f.label :year
-    = f.number_field :year
-  .actions = f.submit
+				  .field
+					= f.label :title
+					= f.text_field :title, class: "form-control"
+				  .field
+					= f.label :author
+					= f.text_field :author, class: "form-control"
+				  .field
+					= f.label :year
+					= f.number_field :year, class: "form-control"
+				  br
+				  .actions = f.submit 'Guardar', class: "btn btn-success"

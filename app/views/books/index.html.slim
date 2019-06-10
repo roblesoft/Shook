@@ -16,6 +16,8 @@ div class="row ml-sm-0 ml-1 justify-content-center "
 					h5 = book.author
 					h5 = book.year
 				div class="card-footer"
-					div = link_to 'Editar', edit_book_path(book), class: "btn btn-light"
+					= link_to 'Editar', edit_book_path(book), remote: true, class: "btn btn-light"
 
-= link_to 'New Book', new_book_path
+= link_to new_book_path, remote: true do 
+	button class="btn btn-success btn-add" +
+	

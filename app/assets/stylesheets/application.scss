@@ -17,10 +17,28 @@
 
 
 .card{
-	border-radius:20px
+	border-radius:20px;
+	-webkit-box-shadow: 10px 10px 31px -14px rgba(0,0,0,0.62);
+	-moz-box-shadow: 10px 10px 31px -14px rgba(0,0,0,0.62);
+	box-shadow: 10px 10px 31px -14px rgba(0,0,0,0.62);
 
 }
 
 .btn{
 	border-radius: 20px
 }
+
+
+.btn-add{
+	position: fixed;
+	top: 85%;
+	left: 85%;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	-webkit-box-shadow: 10px 10px 23px -8px rgba(0,0,0,0.91);
+	-moz-box-shadow: 10px 10px 23px -8px rgba(0,0,0,0.91);
+	box-shadow: 10px 10px 23px -8px rgba(0,0,0,0.91);
+
+}
+
