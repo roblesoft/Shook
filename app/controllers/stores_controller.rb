@@ -4,6 +4,7 @@ class StoresController < ApplicationController
   # GET /stores
   # GET /stores.json
   def index
+	@store = Store.new
     @stores = Store.all
   end
 

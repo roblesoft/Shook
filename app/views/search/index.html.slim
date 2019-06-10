@@ -1,2 +1,15 @@
-h1 Search#index
-p Find me in app/views/search/index.html.slim
+h1 Busqueda de "#{@keyword[1..-2]}"
+
+div class="row ml-sm-0 ml-1 justify-content-center "
+	- @books.each do |book|
+		div class="mr-3 mr-sm-5 mr-md-3 mr-ml-5 mb-4"
+			div class="card text-white bg-#{colorize}" 
+				div class="card-body" style="width: 20rem"
+					= link_to book , method: :delete do 
+						button class="close" type="button"
+							span aria-hidden="true" &times;
+					h2 style="font-weight: bold" = book.title
+					h5 = book.author
+					h5 = book.year
+				div class="card-footer"
+					= link_to 'Editar', edit_book_path(book), remote: true, class: "btn btn-light"

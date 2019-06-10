@@ -2,7 +2,7 @@
 br
 
 div class="row justify-content-center"
-	h1 style="font-weight: bold" Libros en stock
+	h1 style="font-weight: bold" Books in stock
 
 div class="row ml-sm-0 ml-1 justify-content-center "
 	- @books.each do |book|
@@ -19,5 +19,5 @@ div class="row ml-sm-0 ml-1 justify-content-center "
 					= link_to 'Editar', edit_book_path(book), remote: true, class: "btn btn-light"
 
 = link_to new_book_path, remote: true do 
-	button class="btn btn-success btn-add" +
+	button class="btn btn-success btn-add lead" style="font-size: 30px" +
 	

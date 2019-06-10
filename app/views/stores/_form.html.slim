@@ -5,14 +5,12 @@
       ul
         - @store.errors.full_messages.each do |message|
           li = message
-
-  .field
-    = f.label :codename
-    = f.text_field :codename
-  .field
-    = f.label :address
-    = f.text_field :address
-  .field
-    = f.label :phone
-    = f.number_field :phone
-  .actions = f.submit
+  tr	
+	td
+		= f.text_field :codename, class: "form-control"
+	td
+		= f.text_field :address, class: "form-control"
+	td
+		= f.number_field :phone, class: "form-control"
+	td
+	    .actions = f.submit 'Create', class: "btn btn-success"

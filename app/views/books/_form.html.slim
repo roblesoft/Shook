@@ -1,6 +1,6 @@
 div class="modal" tabindex="-1" role="dialog"
 	div class="modal-dialog" role="document"
-		div class="modal-content"
+		div class="modal-content" style="border-radius: 30px"
 			div class="modal-header"
 				h2 style="font-weight: bold" = title
 				button type="button" class="close" data-dismiss="modal" aria-label="Close"
@@ -13,7 +13,6 @@ div class="modal" tabindex="-1" role="dialog"
 					  ul
 						- @book.errors.full_messages.each do |message|
 						  li = message
-
 				  .field
 					= f.label :title
 					= f.text_field :title, class: "form-control"
