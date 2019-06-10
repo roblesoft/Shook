@@ -1,18 +1,26 @@
-= form_for @product do |f|
-  - if @product.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
-      ul
-        - @product.errors.full_messages.each do |message|
-          li = message
-
-  .field
-    = f.label :quantity
-    = f.number_field :quantity
-  .field
-    = f.label :book
-    = f.text_field :book_id
-  .field
-    = f.label :store
-    = f.text_field :store_id
-  .actions = f.submit
+div class="modal" tabindex="-1" role="dialog"
+	div class="modal-dialog" role="document"
+		div class="modal-content" style="border-radius: 30px"
+			div class="modal-header"
+				h2 style="font-weight: bold"
+				button type="button" class="close" data-dismiss="modal" aria-label="Close"
+					  span aria-hidden="true" &times;
+			div class="modal-body"
+				= form_for @product do |f|
+				  - if @product.errors.any?
+					#error_explanation
+					  h2 = "#{pluralize(@product.errors.count, "error")} prohibited this book from being saved:"
+					  ul
+						- @product.errors.full_messages.each do |message|
+						  li = message
+				  .field
+					= f.label :quantity
+					= f.number_field :quantity
+				  .field
+					= f.label :book_id
+					= f.text_field :book_id, class: "form-control"
+				  .field
+					= f.label :store_id
+					= f.number_field :store_id, class: "form-control"
+				  br
+				  .actions = f.submit 'Guardar', class: "btn btn-success"

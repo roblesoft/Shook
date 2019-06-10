@@ -31,4 +31,5 @@ div class="row ml-sm-0 ml-1 justify-content-center "
 =< link_to 'Back', stores_path
 
 
-= render 'products/form'
+= link_to new_product_path, remote: true do 
+	button class="btn btn-success btn-add lead" style="font-size: 30px" +
