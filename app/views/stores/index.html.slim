@@ -8,12 +8,11 @@ table class="table table-striped"
       th Phone
       th
       th
-      th
 
   tbody
     - @stores.each do |store|
       tr
-        td = store.codename
+		td = link_to store.codename, store_path(store), style: "text-decoration: none"
         td = store.address
         td = store.phone
         td = link_to 'Edit', edit_store_path(store), class: "btn btn-primary"

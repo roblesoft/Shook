@@ -6,11 +6,14 @@ class StoresController < ApplicationController
   def index
 	@store = Store.new
     @stores = Store.all
+
   end
 
   # GET /stores/1
   # GET /stores/1.json
   def show
+	  @product = Product.new
+	  @products = @store.products
   end
 
   # GET /stores/new
@@ -70,6 +73,6 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:codename, :address, :phone)
+      params.require(:store).permit(:codename, :address, :phone, :book_id, :store_id)
     end
 end
