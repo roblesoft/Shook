@@ -24,12 +24,12 @@ div class="row ml-sm-0 ml-1 justify-content-center "
 					h5 = product.book.year
 					h5  Quantity: #{product.quantity}
 				div class="card-footer"
-					= link_to 'Editar', edit_product_path(product), remote: true, class: "btn btn-light"
+					= link_to 'Editar', {controller: "products", action: "edit", id: product.id, store_id: @store.id} , remote: true, class: "btn btn-light"
 
 => link_to 'Edit', edit_store_path(@store)
 '|
 =< link_to 'Back', stores_path
 
 
-= link_to new_product_path, remote: true do 
+= link_to({controller: "products", action: "new", store_id: @store.id}, remote: true) do 
 	button class="btn btn-success btn-add lead" style="font-size: 30px" +
