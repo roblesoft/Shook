@@ -1,5 +1,13 @@
 h1 Listing stores
 
+- unless notice.nil?
+	div class="row justify-content-center"
+		- notice.each do |message|
+				span class="badge badge-danger mr-2" = message
+
+br 
+
+
 table class="table table-striped"
   thead
     tr

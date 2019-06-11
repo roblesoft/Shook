@@ -35,7 +35,7 @@ class StoresController < ApplicationController
         format.html { redirect_to @store, notice: 'Store was successfully created.' }
         format.json { render :show, status: :created, location: @store }
       else
-        format.html { render :new }
+        format.html { redirect_to stores_path,  notice: @store.errors.full_messages}
         format.json { render json: @store.errors, status: :unprocessable_entity }
       end
     end

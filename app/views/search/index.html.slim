@@ -1,15 +1,35 @@
-h1 Busqueda de "#{@keyword[1..-2]}"
+h1 Search of "#{@keyword[1..-2]}"
 
 div class="row ml-sm-0 ml-1 justify-content-center "
-	- @books.each do |book|
-		div class="mr-3 mr-sm-5 mr-md-3 mr-ml-5 mb-4"
-			div class="card text-white bg-#{colorize}" 
-				div class="card-body" style="width: 20rem"
-					= link_to book , method: :delete do 
-						button class="close" type="button"
-							span aria-hidden="true" &times;
-					h2 style="font-weight: bold" = book.title
-					h5 = book.author
-					h5 = book.year
-				div class="card-footer"
-					= link_to 'Editar', edit_book_path(book), remote: true, class: "btn btn-light"
+	- if @books.any?
+		- @books.each do |book|
+			div class="mr-3 mr-sm-5 mr-md-3 mr-ml-5 mb-4"
+				div class="card text-white bg-#{colorize}" 
+					div class="card-body" style="width: 20rem"
+						= link_to book , method: :delete do 
+							button class="close" type="button"
+								span aria-hidden="true" &times;
+						h2 style="font-weight: bold" = book.title
+						h5 = book.author
+						h5 = book.year
+					div class="card-footer"
+						= link_to 'Editar', edit_book_path(book), remote: true, class: "btn btn-light"
+		table class="table"
+			thead class="thead-dark"
+				tr
+					th codename
+					th address
+					th phone
+			tbody
+				- @books.each do |book|
+					tr class="text-center table-success"
+						th colspan="3" style="font-weight: bold" = book.title
+					- book.products.each do |product|
+						tr 
+							td = product.store.codename
+							td = product.store.address
+							td = product.store.phone
+	- else
+		br
+		br
+		h3 class="display-3" Not found :(

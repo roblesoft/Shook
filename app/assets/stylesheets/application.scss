@@ -42,9 +42,28 @@
 
 }
 
-
 .search-input{
+	transition: 0.5s;
     background: #4d565f; 
 	color: white;
 	border-radius: 30px;
+	width: 40px;
+	height: 44px;
+	color: black;
+	background: url(search.svg) no-repeat scroll 0.1% 0.1%;
+	 -webkit-filter: invert(100%);
+	padding-left: 40px;
+	border: none !important;
+	outline: none !important;
+}
+
+.search-input:focus {
+    background: #4d565f; 
+	transition: 0.5s;
+	width: 200px;
+	background: url(search.svg) no-repeat scroll 0.1% 0.1%;
+	padding-left: 40px;
+	color: black;
+	border: none !important;
+	outline: none !important;
 }

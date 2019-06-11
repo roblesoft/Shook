@@ -10,6 +10,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
   </head>
 
   <body>
@@ -34,9 +35,9 @@
 				  <li class="nav-item active">
 					  <%= link_to "Stores", stores_path, class: "nav-link" %>
 				  </li>
-				  <div class="nav-item ml-2">
+				  <div class="nav-item ml-2 ">
 					<%= form_tag "/search/index", method: :get, id: "search-form form-inline" do %>
-						<%= text_field_tag :keyword, nil, placeholder: 'Search', class: "form-control field my-lg-0 my-3 mt-sm-3 search-input seatch-inputt", id: "buscador"%>
+						<%= text_field_tag :keyword, nil, placeholder: 'Search', class: "form-control field my-lg-0 my-3 mt-sm-3 search-input", id: "buscador"%>
 					<% end %>
 				</div>		
 			  </ul>

@@ -4,6 +4,13 @@ br
 div class="row justify-content-center"
 	h1 style="font-weight: bold" Books in stock
 
+- unless notice.nil?
+	div class="row justify-content-center"
+		- notice.each do |message|
+				span class="badge badge-danger mr-2" = message
+
+br 
+
 div class="row ml-sm-0 ml-1 justify-content-center "
 	- @books.each do |book|
 		div class="mr-3 mr-sm-5 mr-md-3 mr-ml-5 mb-4"
