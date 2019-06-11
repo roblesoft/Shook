@@ -1,0 +1,16 @@
+AllCops: 
+    TargetRubyVersion: 
+        2.5
+    Exclude: 
+        - bin/**/*
+        - db/**/*
+        - config/initializers/*
+        - config/environments/*
+        - vendor/**/*
+        - config.ru
+        - Rakefile
+        - Guardfile
+        - Gemfile
+
+Documentation: 
+    Enable: false

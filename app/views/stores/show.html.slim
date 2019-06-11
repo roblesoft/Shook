@@ -26,10 +26,5 @@ div class="row ml-sm-0 ml-1 justify-content-center "
 				div class="card-footer"
 					= link_to 'Editar', {controller: "products", action: "edit", id: product.id, store_id: @store.id} , remote: true, class: "btn btn-light"
 
-=> link_to 'Edit', edit_store_path(@store)
-'|
-=< link_to 'Back', stores_path
-
-
 = link_to({controller: "products", action: "new", store_id: @store.id}, remote: true) do 
 	button class="btn btn-success btn-add lead" style="font-size: 30px" +
